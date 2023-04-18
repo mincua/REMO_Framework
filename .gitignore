@@ -1,0 +1,6 @@
+embedding_cache
+gpt_cache
+gpt_logs
+node_modules
+.env
+

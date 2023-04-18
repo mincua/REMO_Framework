@@ -1,0 +1,48 @@
+POST http://127.0.0.1:3000/add_message
+Content-Type: application/json
+
+{
+  "message": "This is a test message",
+  "speaker": "Expert AI",
+  "timestamp": 1000
+}
+
+### 2. Second message
+POST http://127.0.0.1:3000/add_message
+Content-Type: application/json
+
+{
+"message": "System message: \r\n\r\nYou are a legal advisor with great legal know-how, specialised on contract law.\r\nYou will receive tasks from the user and parts of the contracts to review, you will answer as best you can.\r\nYou will answer in the same language as the contract is written in.\r\n\r\n---\r\n\r\nGPT3.5:\r\n\r\nGiven this part of a contract extract the sides and the name of the sides of the contract, also extract the language of the contract:\r\n\r\nCONTRACT DE Inchiriere\r\n\r\nIncheiat intre:\r\n\r\nPartile contractante :\r\n\r\nSebastian-Alexandru Vladescu, cet\u0103\u0163ean rom\u00e2n, CNP 1871015430035, n\u0103scut la data de 15.10.1987, \u00een  Mun. Bucuresti, domiciliat\u0103 \u00een Mun. Bucure\u015fti, Str. Intrarea Solzilor nr. 23, Et. 4, Ap. 5, Sectorul 1, identificat cu  Cartea de Identitate seria RT nr. 814716, eliberat\u0103 la data de 08.11.2012, de c\u0103tre S.P.C.E.P Sector 1, denumiti \u201cLocator\u201d in cele ce urmeaza, \r\nsi\r\nMOUNT SOFTWARE S.R.L., cu sediul in Bld. Gheorghe Sincai nr. 16, bl. C2, et. 7, ap. 35, Sector 4, Bucuresti, cod fiscal RO 33396638,,inregistrata la Registrul Comertului sub numarul  J40\/8494\/17.07.2014 , cont, reprezentata de domnul Alexandru Mincu \u00een calitate de Administrator, (\u201cSocietatea\u201d), denumita \u201cLocatar\u201d in cele ce urmeaza,\r\n\r\nindividual \u201cPartea\u201d si impreuna \u201cPartile\u201d, \r\ncare au convenit sa incheie prezentul contract (\u00ab Contractul \u00bb) dupa cum urmeaza:\r\n\r\n\r\nAnswer in JSON format like this:\r\n{ \"sides\": [ { \"side\": \"Client\", \"name\": \"First Name\/Company Name\" },  { \"side\": \"Developer\", \"name\": \"First Name\/Company Name\" } ], \"language\": \"lang\" }",
+"speaker": "Expert AI",
+"timestamp": 1001
+}
+
+### 3. Third message
+POST http://127.0.0.1:3000/add_message
+Content-Type: application/json
+
+{
+  "message": "As an legal expert AI system whenever a user asks a question you will answer with the best answer you can give, this will help guide you through the interaction: always keep the user as the main target, ask questions to understand the request, always take expert opinions into consideration",
+  "speaker": "Expert AI",
+  "timestamp": 1002
+}
+
+### 4. Forth message
+POST http://127.0.0.1:3000/add_message
+Content-Type: application/json
+
+{
+  "message": "# Presenting to VCs - Innmind questions\r\n\r\nWhat difficulties did you face while pitching?\r\nWhen you start pitching just knowing the pitch by heart and making sure you don't miss anything. Also having answers to what VCs ask.\r\n\r\nHow did you deal with it?\r\n\r\nRehearse the pitch multiple times until you can do it fluently with passion. \r\nDon't pitch important investors at the beginning of the fund-raising process.\r\nWrite down the questions you didn't have answers for and get back to the VCs with answers.\r\nContinuously improve the deck and pitch with feedback.\r\nAsk for feedback from as many partners as possible.\r\n\r\nWhat advice would you give to startups?\r\n\r\nAlways use a designer! If your deck doesn't look good your business won't!\r\nDon't reinvent the wheel, search from some YouTube videos about how to build a deck or use something like SlideBean to build it. Keep the same structure.\r\nKeep it very very simple, try to explain everything like you're explaining to a 5 year old. Simplicity makes everything easy to read and understand.\r\nAnswer all basic questions easily: What you're building, how is it for and why do they need it.\r\n\r\nWhat are the main questions VCs ask?\r\n\r\nWhat's different about your product from the competitors?\r\nWhat's your go-to-market strategy?\r\nHow will the project make money?\r\nDetails about the team, token vesting, etc.\r\n\r\n\r\nWhat do VCs look for when viewing startups?\r\n\r\nVCs will invest for making money, you need to show them how you're gonna grow the business or how the business will grow the token to a place where they can win. \r\nThink about the startup from their point of view, they need to minimise risks, the more you de-risked the business the better it is.\r\nTraction fixes all problems! If you have traction everything else is negotiable.",
+  "speaker": "Startup Expert",
+  "timestamp": 1003
+}
+
+### 5. Rebuild tree
+POST http://127.0.0.1:3000/rebuild_tree
+
+### 6. Maintain tree
+POST http://127.0.0.1:3000/maintain_tree
+
+### 7. Search for something
+GET http://127.0.0.1:3000/search?query=farm%20xyz%20smart%20contract
+
